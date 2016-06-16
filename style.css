@@ -1,0 +1,104 @@
+html, body {
+	height: 100%;
+}
+
+html {
+	display: table;
+	margin: auto;
+}
+
+body {
+	display: table-cell;
+	vertical-align: middle;
+	background: radial-gradient(circle, #3e23ff, #3cff3c, #ff2362, #2dafe6, #ff00ff, #ff8000);
+background-size: 1200% 1200%;
+
+-webkit-animation: rainbow 120s ease infinite;
+-moz-animation: rainbow 120s ease infinite;
+animation: rainbow 120s ease infinite;
+
+}
+
+section {
+	display: inline-block;
+	margin: auto;
+}
+
+.slide {
+	color: #fff;
+	text-align: center;
+	display: none;
+}
+
+.home {
+	color: #fff;
+	text-align: center;
+	display: none;
+}
+
+.current {
+	display: block;
+}
+
+.button {
+	padding: 18px 46px;
+	border-radius: 2px;
+	background-color: none;
+	border: 1px solid #D3D3D3;
+	color: white;
+	transition-duration: 1.5s;
+	text-decoration: none;
+	font-size: 30px;
+	top: 200px;
+}
+
+.button:hover {
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.pair1 {
+	margin-right: 10px;
+}
+
+.pair2 {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.pair3 {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.pair4 {
+	margin-left: 10px;
+}
+
+h1 {
+	font-size: 350%;
+	font-weight: bolder;
+}
+
+h2 {
+	margin-right: 80px;
+	margin-left: 80px;
+	font-weight: none;
+	margin-bottom: 30px;
+	margin-top: -25px;
+}
+
+@-webkit-keyframes rainbow {
+    0%{background-position:36% 0%}
+    50%{background-position:65% 100%}
+    100%{background-position:36% 0%}
+}
+@-moz-keyframes rainbow {
+    0%{background-position:36% 0%}
+    50%{background-position:65% 100%}
+    100%{background-position:36% 0%}
+}
+@keyframes rainbow { 
+    0%{background-position:36% 0%}
+    50%{background-position:65% 100%}
+    100%{background-position:36% 0%}
+}
