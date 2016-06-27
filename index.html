@@ -1,42 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Iot-Chart</title>
-	<link href="style.css" rel="stylesheet">
+	<title>Flowchart Test</title>
+   <link href="css/impress-demo.css" rel="stylesheet" />
 </head>
 <body>
-	<div class="container">
-		<div class="slide current">
-			<div class="slide-copy">
-				<h1></h1>
-				<h2></h2>
-				<section class="b1">
-				<a class="button pair1" id="button1" href="#">
-					<span class="spacer btn1"></span>
-				</a>
-				</section>
-				<section class="b2">
-					<a class="button pair2" id="button2" href="#">
-						<span class="spacer btn2"></span>
-					</a>
-				</section>
-				<section class="b3">
-					<a class="button pair3" id="button3" href="#">
-						<span class="spacer btn3"></span>
-					</a>
-				</section>
-				<section class="b4">
-					<a class="button pair4" id="button4" href="#">
-						<span class="spacer btn4"></span>
-					</a>
-				</section>
-			</div>
-		</div>
-	</div>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-	<script src="cards.js"></script>
-	<script src="app.js"></script>	
+	<div id="impress">
+		<div id="overview" data-x="3000" data-y="1500" data-scale="10"></div>
 
+
+		
+	</div>
+
+	<script src="js/cards.js"></script>
+	<script src="js/constructor.js"></script>
+	<script src="js/impress.js"></script>
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> 
+  	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>    
+	<script>impress().init();</script>
 </body>
 </html>
-
