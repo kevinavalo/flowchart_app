@@ -570,30 +570,51 @@
 
         // `prev` API function goes to previous step (in document order)
         var prev = function() {
-            var prev = cards[steps.indexOf( activeStep ) - 1].btn2.pathID + 1;
-            prev = prev >= 0 ? steps[ prev ] : steps[ steps.length - 1 ];
+            var prev;
 
-            var impress = document.getElementById("impress");
-            var elements = impress.getElementsByTagName("div");
-            console.log(elements[steps.indexOf( activeStep ) + 1]);
-            var buttons = elements[steps.indexOf( activeStep ) + 1].getElementsByTagName("p");
-            buttons[1].style.color = "#84ADE9";
+            if(steps.indexOf(activeStep) == 0) {
+                prev = 0;
+                console.log("in first if statement");
+                prev = prev < steps.length ? steps[prev] : steps[0];
+            } else if(steps.indexOf(activeStep) == 1) {
+                prev = 0;
+                console.log("in second if statement");
+                prev = prev < steps.length ? steps[prev] : steps[0];
+            } else {
+                prev = cards[steps.indexOf( activeStep ) - 2].btn2.pathID + 2;
+                prev = prev < steps.length ? steps[ prev ] : steps[ 0 ];
+
+                var impress = document.getElementById("impress");   
+                var elements = impress.getElementsByTagName("div");
+                var buttons = elements[steps.indexOf( activeStep ) + 1].getElementsByTagName("p");
+                buttons[1].style.color = "#84ADE9";
+            }
 
             return goto( prev );
         };
 
         // `next` API function goes to next step (in document order)
         var next = function() {
-            var next = cards[steps.indexOf( activeStep ) - 1].btn1.pathID + 1;
-            next = next < steps.length ? steps[ next ] : steps[ 0 ];
+            var next;
+            if(steps.indexOf( activeStep ) > 1){
+                next = cards[steps.indexOf( activeStep ) - 2].btn1.pathID + 2;
+                next = next < steps.length ? steps[ next ] : steps[ 0 ];
 
-            var impress = document.getElementById("impress");
-            var elements = impress.getElementsByTagName("div");
-            var buttons = elements[steps.indexOf( activeStep ) + 1].getElementsByTagName("p");
-            buttons[0].style.color = "#84ADE9";
-
-            elements[steps.indexOf( activeStep ) +1].classList.remove("rightLine");
-            elements[steps.indexOf( activeStep ) +1].classList.add("rightLineV");
+                var impress = document.getElementById("impress");
+                var elements = impress.getElementsByTagName("div");
+                var buttons = elements[steps.indexOf( activeStep ) + 1].getElementsByTagName("p");
+                buttons[0].style.color = "#84ADE9";
+                if(cards[steps.indexOf( activeStep ) - 2].statement == "") {
+                    elements[steps.indexOf( activeStep ) +1].classList.remove("rightLine");
+                    elements[steps.indexOf( activeStep ) +1].classList.add("rightLineV");
+                }
+            } else if(steps.indexOf(activeStep) == 0) {
+                next = 1;
+                next = next < steps.length ? steps[next] : steps[0];
+            } else {
+                next = 2;
+                next = next < steps.length ? steps[next] : steps[0];
+            }
 
             return goto( next );
         };
@@ -626,7 +647,9 @@
 
             root.addEventListener( "impress:stepleave", function( event ) {
                 event.target.classList.remove( "present" );
-                event.target.classList.add("visited");
+                if(steps.indexOf(activeStep) > 1) {
+                    event.target.classList.add("visited");
+                }
                 event.target.classList.add( "past" );
             }, false );
 

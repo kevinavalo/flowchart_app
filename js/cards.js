@@ -17,17 +17,17 @@ function Button(y, z) {
 }
 
 var questions = ["Should you buy this?", "Is this necessary?",
-								 "Will it make you happy?"];
-var statements = ["Take this quiz for it", "",
-									""];
+								 "Will it make you happy?", "Is it for the home?", "Buy it"];
+var statements = ["", "",
+									"", "", "You definitely need it"];
 var btnTxt1 = ["Maybe", "Of course it is",
-							 "Obviously"];
+							 "Obviously", "Yes", ""];
 var btnTxt2 = ["Nahh", "Not really",
-							 "Nothing makes me happy"];
-var btn1Path = [2, 0,
-								1];
-var btn2Path = [1, 2,
-								0];
+							 "Nothing makes me happy", "No", ""]; 
+var btn1Path = [2, 3,
+								1, 4, -2];
+var btn2Path = [1, 3,
+								4, 2, -2];
 var xpos = [];
 var ypos = [];
 var xFound = false;
@@ -39,7 +39,7 @@ function getRandomIntInclusive(min, max) {
 
 for(var i = 0; i < questions.length; i++) {
 	xpos[i] = 500 + i*1000;
-	ypos[i] = 500;
+	ypos[i] = 1000;
 	console.log("x = " + xpos[i] + ", y = " + ypos[i]);
 }
 
