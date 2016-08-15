@@ -85,13 +85,13 @@ body {
     font-family: 'PT Sans', sans-serif;
     min-height: 740px;
 
-    background: rgb(215, 215, 215);
-    background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(rgb(240, 240, 240)), to(rgb(190, 190, 190)));
+    background: rgb(255, 255, 255); /* this used to be rgb(215, 215, 215) */
+  /*  background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(rgb(240, 240, 240)), to(rgb(190, 190, 190)));
     background: -webkit-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
     background:    -moz-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
     background:     -ms-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
     background:      -o-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
-    background:         radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+    background:         radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));*/
 }
 
 /*
@@ -164,10 +164,16 @@ a:focus {
 */
 
 .step {
-    position: relative;
+    position: absolute;
     width: 900px;
+    max-width: 900px;
+    height: 495px;
+    max-height: 495px;
     padding: 40px;
     margin: 20px auto;
+
+    border-radius: 2px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .1)
 
     -webkit-box-sizing: border-box;
     -moz-box-sizing:    border-box;
@@ -187,7 +193,7 @@ a:focus {
 */
 .impress-enabled .step {
     margin: 0;
-    opacity: 0.3;
+    opacity: 1;
 
     -webkit-transition: opacity 1s;
     -moz-transition:    opacity 1s;
@@ -207,15 +213,15 @@ a:focus {
     They cover everything what you see on first three steps of the demo.
 */
 .slide {
-    display: block;
+    float: left;
 
     width: 900px;
-    height: 700px;
+    height: 485px;
     padding: 40px 60px;
 
-    background-color: white;
-    border: 1px solid rgba(0, 0, 0, .3);
-    border-radius: 10px;
+    /*background-color: white;*/
+    border: 3px solid #000;
+    border-radius: 2px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
 
     color: rgb(102, 102, 102);
@@ -241,6 +247,10 @@ a:focus {
 }
 
 .slide q strong {
+    white-space: nowrap;
+}
+
+.buttonTxt {
     white-space: nowrap;
 }
 
@@ -706,15 +716,40 @@ a:focus {
     Thanks for reading. I hope you enjoyed it at least as much as I enjoyed writing it
     for you.
 */
-
+.buttonTxt {
+    width: 150px;
+    max-width: 150px;
+    height: 100px;
+}
 #btn1 {
-    float: right;
-    margin-top: 340px;
+    position: absolute;
+    /*float: right;
+    margin-top: 340px;*/
+    top: 400px;
+    word-wrap: break-all;
 }
 
 #btn2 {
-    float: left;
-    margin-top: 340px;
+    position: absolute;
+    /*float: left;
+    margin-top: 340px;*/
+    top: 400px;
+    left: 590px;
+    word-wrap: break-all;
+}
+
+#btn3 {
+    position: absolute;
+    top: 400px;
+    left: 390px;
+    word-wrap: break-all;
+}
+
+#btn4 {
+    position: absolute;
+    top: 400px;
+    left: 220px;
+    word-wrap: break-all;
 }
 
 .rightline {
@@ -752,4 +787,30 @@ a:focus {
     border-bottom: 5px solid #84ADE9;
 
     z-index: -1;
+}
+
+.svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#startingCard {
+    position: absolute;
+    width: 1200px;
+    height: 1100px;
+    text-align: center;
+    font-size: 120px;
+    line-height: 1;
+}
+
+#startP {
+    font-size: 50px;
+    width: 820px;
+}
+
+#startSVG {
+    position: absolute;
+    top: 0;
+    left: 0;
 }

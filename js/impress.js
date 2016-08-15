@@ -569,44 +569,64 @@
         };
 
         // `prev` API function goes to previous step (in document order)
-        var prev = function() {
+        var prev = function(keyIndex) {
             var prev;
 
             if(steps.indexOf(activeStep) == 0) {
                 prev = 0;
-                console.log("in first if statement");
                 prev = prev < steps.length ? steps[prev] : steps[0];
             } else if(steps.indexOf(activeStep) == 1) {
                 prev = 0;
-                console.log("in second if statement");
                 prev = prev < steps.length ? steps[prev] : steps[0];
             } else {
-                prev = cards[steps.indexOf( activeStep ) - 2].btn2.pathID + 2;
+                if(keyIndex === 37) {
+                    prev = cards[steps.indexOf( activeStep ) - 2].btn2.pathID + 1;
+                    var impress = document.getElementById("impress");   
+                    var elements = impress.getElementsByTagName("div");
+                    var buttons = elements[steps.indexOf( activeStep ) + 1].getElementsByTagName("p");
+                    buttons[0].style.color = "#84ADE9";
+                }
+
+                if(keyIndex === 83) {
+                    prev = cards[steps.indexOf( activeStep ) - 2].btn3.pathID + 1;
+                    var impress = document.getElementById("impress");   
+                    var elements = impress.getElementsByTagName("div");
+                    var buttons = elements[steps.indexOf( activeStep ) + 1].getElementsByTagName("p");
+                    buttons[2].style.color = "#84ADE9";
+                }
+
                 prev = prev < steps.length ? steps[ prev ] : steps[ 0 ];
 
-                var impress = document.getElementById("impress");   
-                var elements = impress.getElementsByTagName("div");
-                var buttons = elements[steps.indexOf( activeStep ) + 1].getElementsByTagName("p");
-                buttons[1].style.color = "#84ADE9";
             }
 
             return goto( prev );
         };
 
         // `next` API function goes to next step (in document order)
-        var next = function() {
+        var next = function(keyIndex) {
             var next;
+
             if(steps.indexOf( activeStep ) > 1){
-                next = cards[steps.indexOf( activeStep ) - 2].btn1.pathID + 2;
+                if(keyIndex === 39) {
+                    next = cards[steps.indexOf( activeStep ) - 2].btn1.pathID + 1;
+                    var impress = document.getElementById("impress");
+                    var elements = impress.getElementsByTagName("div");
+                    var buttons = elements[steps.indexOf( activeStep ) + 1].getElementsByTagName("p");
+                    buttons[1].style.color = "#84ADE9";
+                }
+                if(keyIndex === 40) {
+                    next = cards[steps.indexOf( activeStep ) - 2].btn4.pathID + 1;
+                    var impress = document.getElementById("impress");
+                    var elements = impress.getElementsByTagName("div");
+                    var buttons = elements[steps.indexOf( activeStep ) + 1].getElementsByTagName("p");
+                    buttons[3].style.color = "#84ADE9";
+                }
                 next = next < steps.length ? steps[ next ] : steps[ 0 ];
 
-                var impress = document.getElementById("impress");
-                var elements = impress.getElementsByTagName("div");
-                var buttons = elements[steps.indexOf( activeStep ) + 1].getElementsByTagName("p");
-                buttons[0].style.color = "#84ADE9";
-                if(cards[steps.indexOf( activeStep ) - 2].statement == "") {
-                    elements[steps.indexOf( activeStep ) +1].classList.remove("rightLine");
-                    elements[steps.indexOf( activeStep ) +1].classList.add("rightLineV");
+
+                if(cards[steps.indexOf(activeStep) - 2].statement == "") {
+                    //elements[steps.indexOf( activeStep ) +1].classList.remove("rightLine");
+                    //elements[steps.indexOf( activeStep ) +1].classList.add("rightLineV");
                 }
             } else if(steps.indexOf(activeStep) == 0) {
                 next = 1;
@@ -770,21 +790,22 @@
                 return;
             }
 
-            if ( event.keyCode === 9 ||
+            if ( event.keyCode === 83 ||
                ( event.keyCode >= 32 && event.keyCode <= 34 ) ||
                ( event.keyCode >= 37 && event.keyCode <= 40 ) ) {
                 switch ( event.keyCode ) {
-                    case 33: // Page up
+                    //case 33: // Page up
                     case 37: // Left
-                    case 38: // Up
-                             api.prev();
+                    case 83:
+                    //case 38: // Up
+                             api.prev(event.keyCode);
                              break;
-                    case 9:  // Tab
-                    case 32: // Space
-                    case 34: // Page down
+                    //case 9:  // Tab
+                    //case 32: // Space
+                    //case 34: // Page down
                     case 39: // Right
                     case 40: // Down
-                             api.next();
+                             api.next(event.keyCode);
                              break;
                 }
 

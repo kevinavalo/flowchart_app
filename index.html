@@ -1,25 +1,31 @@
-<!DOCTYPE html>
 <html>
 <head>
 	<title>Flowchart Test</title>
    <link href="css/impress-demo.css" rel="stylesheet" />
 </head>
 <body>
+
 	<div id="impress">
-		<div id="overview" class="step" data-x="3000" data-y="1500" data-scale="5"></div>		
-		<div id="big" class="step" data-x="1600" data-y="100" style="">IoT flowchart </div>
-
-
-
+		<div id="overview" class="step" data-x="4500" data-y="200" data-scale="8"></div>
+		<div id="startingCard" class="step" data-x="2000" data-y="-2400" data-scale="5">Should You buy this IoT device?
+			<p id="startP">The Internet of Things products are on the rise and as of 2015, most of these products are a hit or miss -- either it'll improve your life or it'll be tossed into the closet after a couple of weeks. If you're debating whether to buy a particular IoT device, go through this flow chart</p>
+			<svg x="0" y="0" width="900" height="500" class="startSVG" xmlns="http://www.w3.org/2000/svg">
+				<path id="path1" d="M600 5 V 298" fill="transparent" stroke="blue" stroke-width="1"/>
+			</svg>
+		</div>
 		
 	</div>
 
+	<script src="js/graph.js"></script>
 	<script src="js/cards.js"></script>
 	<script src="js/constructor.js"></script>
 	<script src="js/impress.js"></script>
-  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> 
-  	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
-  	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>    
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+	<script src="js/jsPlumb-2.1.4-min.js"></script>    
+	<script type="text/javascript">
+	
+	</script>
 	<script>impress().init();</script>
 </body>
 </html>
