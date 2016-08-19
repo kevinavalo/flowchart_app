@@ -233,6 +233,12 @@ a:focus {
     letter-spacing: -1px;
 }
 
+.buy {
+    border: 3px solid #000;
+    border-radius: 2px;
+    box-shadow: 0 2px 6px rgba(102, 255, 51, .1)    
+}
+
 .visited {
     border: 1px solid #84ADE9;
     box-shadow: 0 2px 6px #84ADE9;
@@ -717,8 +723,8 @@ a:focus {
     for you.
 */
 .buttonTxt {
-    width: 150px;
-    max-width: 150px;
+    width: 300px;
+    max-width: 300px;
     height: 100px;
 }
 #btn1 {
@@ -814,3 +820,140 @@ a:focus {
     top: 0;
     left: 0;
 }
+
+#step-6 #btn1 {
+    overflow: hidden;
+    font-size: 55%;
+}
+
+#step-10 #btn1 {
+    overflow: hidden;
+    font-size: 60%;
+}
+
+#step-23 #btn1 {
+    font-size: 50%;
+}
+
+#step-18 #btn1 {
+    font-size: 70%;
+}
+
+#step-20 #btn1 {
+    font-size: 70%;
+}
+
+#step-38 #btn1 {
+    font-size: 45%;
+}
+
+#step-30 #btn1 {
+    font-size: 45%;
+}
+
+#step-60 #btn1 {
+    font-size: 55%;
+}
+
+#step-84 #btn1 {
+    font-size: 70%;
+}
+
+#step-91 #btn1 {
+    font-size: 70%;
+}
+
+#step-7 #btn2 {
+    font-size: 60%;
+}
+
+#step-9 #btn2 {
+    font-size: 60%;
+}
+
+#step-10 #btn2 {
+    font-size: 60%;
+}
+
+#step-22 #btn2 {
+    font-size: 60%;
+}
+
+#step-23 #btn2 {
+    position: absolute;
+    top: 350px;
+    left: 400px;
+    font-size: 45%;
+}
+
+#step-18 #btn2 {
+    position: absolute;
+    top: 400px;
+    left: 400px;
+    font-size: 60%;
+}
+
+#step-20 #btn2 {
+    position: absolute;
+    top: 400px;
+    left: 500px;
+    font-size: 60%;
+}
+
+#step-38 #btn2 {
+    position: absolute;
+    top: 350px;
+    left: 400px;
+    font-size: 45%;
+}
+
+#step-30 #btn2 {
+    position: absolute;
+    top: 350px;
+    left: 400px;
+    font-size: 45%;
+}
+
+#step-34 #btn2 {
+    position: absolute;
+    top: 250px;
+    left: 400px;
+    font-size: 45%;
+}
+
+#step-34 #btn3 {
+    position: absolute;
+    top: 400px;
+    left: 300px;
+    font-size: 45%;
+}
+
+#step-55 #btn2 {
+    font-size: 65%;
+}
+
+#step-56 #btn2 {
+    font-size: 65%;
+}
+
+#step-52 #btn2 {
+    font-size: 55%;
+}
+
+#step-49 #btn2 {
+    font-size: 65%;
+}
+
+#step-89 #btn2 {
+    position: absolute;
+    left: 150px;
+}
+
+#step-94 #btn2 {
+    position: absolute;
+    left: 100px;
+}
+
+
+
+
